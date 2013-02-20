@@ -1,0 +1,25 @@
+<h1>Listing allbums</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @allbums.each do |allbum| %>
+  <tr>
+    <td><%= allbum.name %></td>
+    <td><%= allbum.description %></td>
+    <td><%= link_to 'Show', allbum %></td>
+    <td><%= link_to 'Edit', edit_allbum_path(allbum) %></td>
+    <td><%= link_to 'Destroy', allbum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Allbum', new_allbum_path %>

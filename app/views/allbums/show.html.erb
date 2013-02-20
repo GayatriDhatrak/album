@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @allbum.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @allbum.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_allbum_path(@allbum) %> |
+<%= link_to 'Back', allbums_path %>
