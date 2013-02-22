@@ -6,6 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'devise'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 # Gems used only for assets and not required
@@ -15,12 +16,18 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+ gem 'therubyracer', :platforms => :ruby
+ 	gem 'twitter-bootstrap-rails'
+ 	gem 'less-rails'
+	gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'rmagick'
+gem 'carrierwave'
+gem 'kaminari'
+
 gem 'jquery-rails'
+gem 'pry'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

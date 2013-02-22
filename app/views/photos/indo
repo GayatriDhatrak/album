@@ -1,0 +1,26 @@
+<h3>Listing photos</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @photos.each do |photo| %>
+  <tr>
+    <td><%= photo.name %></td>
+    <td><%= image_tag(photo.image_url,:size=>'200x240')%></td>
+    <td><%= link_to 'Show', allbum_photo_path(@allbum,photo) %></td>
+    <td><%= link_to 'Edit', edit_allbum_photo_path(@allbum,photo) %></td>
+    <td><%= link_to 'Destroy',allbum_photo_path(@allbum,photo), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Photo', new_allbum_photo_path %><br>
+<%= link_to 'Back', allbums_path%>

@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 def new
 end
 def create
+  binding.pry
   user = User.authenticate(params[:name], params[:password])
   if user
     session[:user_id] = user.id

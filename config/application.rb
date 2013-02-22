@@ -38,6 +38,8 @@ module Album
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.secret_token = '6d48f309117a7d984c9de718a7f159a42ccb620c1bff8d59695156807a20a196479c35f25b22f2b66f6dcec89c0dcb656335a0411326a0b12212cf1e430f5f23'
+
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true

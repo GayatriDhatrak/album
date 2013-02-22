@@ -1,25 +1,34 @@
-<h1>Listing allbums</h1>
+<h3>Listing Albums Details</h3>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'Add New Album', new_allbum_path %>
 
-<% @allbums.each do |allbum| %>
-  <tr>
-    <td><%= allbum.name %></td>
-    <td><%= allbum.description %></td>
-    <td><%= link_to 'Show', allbum %></td>
-    <td><%= link_to 'Edit', edit_allbum_path(allbum) %></td>
-    <td><%= link_to 'Destroy', allbum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="container">
+  <div class="row">
+   <div class="span4">
+   <%= image_tag("2.jpg",:size=>'200x240')%>
+   </div>
+   
+   <div class="span8">
+    <table border=1 class="tab">
+    <tr>
+     <th>Name</th>
+     <th>Description</th>
+     <th colspan='3'>Operations</th>
+    </tr>
 
-<br />
+    <% @allbums.each do |allbum| %>
+    <tr>
+     <td><%= allbum.name %></td>
+     <td><%= allbum.description %></td>
+     <td><%= link_to 'Images', allbum_photos_path(allbum) %>
+    <%= link_to 'Edit', edit_allbum_path(allbum) %>
+    <%= link_to 'Destroy', allbum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </table>
+   </div>
+   </div>
+</div>
+ <br />
 
-<%= link_to 'New Allbum', new_allbum_path %>
+<%= paginate @allbums %>

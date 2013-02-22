@@ -6,11 +6,38 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="main">
+  <br>
+  <h1 class="heading">Picso Mania...</h1><br>
+  <hr color="black">
+  
+  <div class="container">
+  <div class="row">
+   <div class="span7">
+    <ul class="nav">
+    <li><%= link_to "Create Album",new_allbum_path%></li>
+    </ul>
+   </div>
+  
+   <div class="span5">
+   <% if current_devise_user %>
+    Logged in as <%= current_devise_user.email %>.
+    <%= link_to "Log out", destroy_devise_user_session_path %>
+   <% else %>
+    <%= link_to "Sign up", new_devise_user_registration_path %> or
+    <%= link_to "log in", new_devise_user_session_path %>
+   <% end %>
+   </div>
+  </div>
+  </div>   
 
-
-<%= yield %>
-
-
+<div class="container">
+  <div class="row">
+   <div class="span12">
+      <%= yield %>
+   </div>
+  </div>
+</div>   
+   
 </body>
 </html>

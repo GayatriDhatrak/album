@@ -1,15 +1,20 @@
 Album::Application.routes.draw do
-  get "log_out" => "sessions#destroy", :as => "log_out"
-  get "log_in" => "sessions#new", :as => "log_in"
-  #get "home" => "users#welcome", :as =>"home"
- # get "sign_up" => "users#new", :as => "sign_up"
 
-  root :to =>'sessions#new'
-  resources :allbums
+  
 
 
-  resources :users
-  resources :sessions
+  #get "home/index"
+
+  devise_for :devise_users
+  root :to =>'allbums#index'
+  
+  resources :allbums do 
+    resources :photos
+  end
+
+  #resources :users
+
+  #resources :sessions
 
 
   # The priority is based upon order of creation:

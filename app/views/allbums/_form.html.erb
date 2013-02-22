@@ -11,15 +11,18 @@
     </div>
   <% end %>
 
+ <h5>Enter Album Details :</h5>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label :description %> 
+    <%= f.text_area :description, :size=>"29x5" %>
   </div>
+  
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save"%>
   </div>
 <% end %>

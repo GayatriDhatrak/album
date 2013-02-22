@@ -11,3 +11,47 @@
  *= require_self
  *= require_tree .
  */
+ul.nav {
+	list-style: none;
+	text-align: left;
+
+}
+ul.nav li{
+	display:inline-block;
+  
+}
+ul.nav li{
+	/*border:solid red 1px;*/
+	margin:10px;
+	background-color: rgb(212, 200, 243);
+	color: black;
+	padding: 10px;
+}
+
+body.main {
+	background-color: skyblue
+}
+
+h1.heading{
+	color: rgb(57, 26, 218);
+	font-size: 38px;
+	text-align: center
+}
+
+table.tab{
+
+ width: 100%;
+ height: 100%;
+ border:rgb(57, 26, 218) ;
+ background-color:rgb(237, 247, 246);
+}
+
+th{
+	padding:10px;
+	color: rgb(8, 33, 34);
+	background-color: rgb(211, 230, 211)	;
+}
+
+td{
+	padding:10px;
+} 

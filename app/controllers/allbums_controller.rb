@@ -2,7 +2,8 @@ class AllbumsController < ApplicationController
   # GET /allbums
   # GET /allbums.json
   def index
-    @allbums = Allbum.all
+    #@allbums = Allbum.all
+    @allbums = Allbum.page(params[:page]).per(3)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,11 +26,6 @@ class AllbumsController < ApplicationController
   # GET /allbums/new.json
   def new
     @allbum = Allbum.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @allbum }
-    end
   end
 
   # GET /allbums/1/edit
@@ -42,19 +38,14 @@ class AllbumsController < ApplicationController
   def create
     @allbum = Allbum.new(params[:allbum])
 
-    respond_to do |format|
       if @allbum.save
-        format.html { redirect_to @allbum, notice: 'Allbum was successfully created.' }
-        format.json { render json: @allbum, status: :created, location: @allbum }
+        redirect_to allbum_photos_path(@allbum), notice: 'Allbum was successfully created.' 
       else
-        format.html { render action: "new" }
-        format.json { render json: @allbum.errors, status: :unprocessable_entity }
+        render :action=>"new" 
       end
-    end
+   
   end
 
-  # PUT /allbums/1
-  # PUT /allbums/1.json
   def update
     @allbum = Allbum.find(params[:id])
 
