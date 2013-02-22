@@ -39,7 +39,7 @@ class PhotosController < ApplicationController
     @photo = @allbum.photos.new(params[:photo])
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to new_allbum_photo_path }
+        format.html { redirect_to new_allbum_photo_path, notice:"Saved,You can add more images..." }
         format.json { render json: @photo, status: :created, location: @photo }
       else
         format.html { render action: "new" }

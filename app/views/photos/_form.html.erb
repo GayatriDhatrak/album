@@ -1,3 +1,11 @@
+<div class="container">
+  <div class="row">
+   <div class="span12">
+    <%= notice %>
+   </div>
+  </div>
+</div>
+
 <%= form_for([@allbum,@photo]) do |f| %>
   <% if @photo.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +18,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -22,6 +30,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "save" %>
   </div>
 <% end %>
